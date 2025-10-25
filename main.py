@@ -16,7 +16,8 @@ from utils import search_market
 app = FastAPI()
 
 # Initialize models and configurations
-gemini = dspy.Google(model='gemini-1.5-flash', api_key=os.environ["GOOGLE_API_KEY"], temperature=0.3)
+# gemini = dspy.Google(model='gemini-flash-latest', api_key=os.environ["GOOGLE_API_KEY"], temperature=0.3)
+gemini = dspy.Google(model='gemini-2.5-flash-lite', api_key=os.environ["GOOGLE_API_KEY"], temperature=0.3)
 dspy.settings.configure(lm=gemini)
 
 chatbot = CoT()
